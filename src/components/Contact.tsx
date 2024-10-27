@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
-import { useLanguage } from "../contexts/LanguageContext";
+import { useLanguage } from "../hooks/useLanguage";
 
 const Contact = () => {
   const { t } = useLanguage();

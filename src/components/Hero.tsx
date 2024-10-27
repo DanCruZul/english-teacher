@@ -3,7 +3,7 @@ import { GraduationCap, Globe2 } from "lucide-react";
 import laiaDesktop from "../assets/laiaDesktop.png";
 import laiaMobile from "../assets/laia.png";
 import { scrollToSection } from "../utils/navigation";
-import { useLanguage } from "../contexts/LanguageContext";
+import { useLanguage } from "../hooks/useLanguage";
 
 const Hero = () => {
   const { t } = useLanguage();

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useLanguage } from "../contexts/LanguageContext";
+import { useLanguage } from "../hooks/useLanguage";
 import onlineSvg from "../assets/online.svg";
 import bookingSvg from "../assets/booking.svg";
 import examSvg from "../assets/exam.svg";

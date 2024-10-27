@@ -1,73 +1,86 @@
-import { useLanguage } from "../contexts/LanguageContext";
+// laia/src/components/DynamicHead.tsx
+import { useLanguage } from "../hooks/useLanguage";
 import { Helmet } from "react-helmet";
 import { useLocation } from "react-router-dom";
 
+interface Metadata {
+  title: string;
+  description: string;
+  keywords: string;
+}
+
+interface BaseMetadata {
+  [key: string]: {
+    [key: string]: Metadata;
+  };
+}
+
 const DynamicHead = () => {
-  const { language, t } = useLanguage();
+  const { language } = useLanguage();
   const location = useLocation();
 
-  const getMetadata = () => {
-    const baseMetadata = {
-      en: {
-        home: {
-          title: "Laia Martinez - English & Spanish Teacher",
-          description:
-            "Learn English and Spanish with personalized online classes. Expert language teacher offering flexible schedules and proven methodology.",
-          keywords:
-            "english classes, spanish classes, language learning, online teaching, language tutor",
-        },
-        privacyPolicy: {
-          title: "Privacy Policy - Laia Martinez",
-          description:
-            "Privacy Policy for Laia Martinez's language teaching services. Learn about how we handle and protect your personal information.",
-          keywords:
-            "privacy policy, data protection, language teaching, personal data",
-        },
-        terms: {
-          title: "Terms and Conditions - Laia Martinez",
-          description:
-            "Terms and conditions for Laia Martinez's language teaching services. Understanding our service terms and policies.",
-          keywords:
-            "terms and conditions, service terms, language teaching policies",
-        },
-        notFound: {
-          title: "Page Not Found - Laia Martinez",
-          description:
-            "The page you're looking for cannot be found. Return to our language learning services homepage.",
-          keywords: "404, page not found, language teaching",
-        },
+  const baseMetadata: BaseMetadata = {
+    en: {
+      home: {
+        title: "Laia Martinez - English & Spanish Teacher",
+        description:
+          "Learn English and Spanish with personalized online classes. Expert language teacher offering flexible schedules and proven methodology.",
+        keywords:
+          "english classes, spanish classes, language learning, online teaching, language tutor",
       },
-      es: {
-        home: {
-          title: "Laia Martinez - Profesora de Inglés y Español",
-          description:
-            "Aprende inglés y español con clases online personalizadas. Profesora experta en idiomas que ofrece horarios flexibles y metodología probada.",
-          keywords:
-            "clases de inglés, clases de español, aprendizaje de idiomas, enseñanza online, tutora de idiomas",
-        },
-        privacyPolicy: {
-          title: "Política de Privacidad - Laia Martinez",
-          description:
-            "Política de privacidad para los servicios de enseñanza de idiomas de Laia Martinez. Conozca cómo manejamos y protegemos su información personal.",
-          keywords:
-            "política de privacidad, protección de datos, enseñanza de idiomas, datos personales",
-        },
-        terms: {
-          title: "Términos y Condiciones - Laia Martinez",
-          description:
-            "Términos y condiciones para los servicios de enseñanza de idiomas de Laia Martinez. Comprenda nuestros términos de servicio y políticas.",
-          keywords:
-            "términos y condiciones, términos de servicio, políticas de enseñanza de idiomas",
-        },
-        notFound: {
-          title: "Página No Encontrada - Laia Martinez",
-          description:
-            "La página que busca no se puede encontrar. Vuelva a nuestra página principal de servicios de enseñanza de idiomas.",
-          keywords: "404, página no encontrada, enseñanza de idiomas",
-        },
+      privacyPolicy: {
+        title: "Privacy Policy - Laia Martinez",
+        description:
+          "Privacy Policy for Laia Martinez's language teaching services. Learn about how we handle and protect your personal information.",
+        keywords:
+          "privacy policy, data protection, language teaching, personal data",
       },
-    };
+      terms: {
+        title: "Terms and Conditions - Laia Martinez",
+        description:
+          "Terms and conditions for Laia Martinez's language teaching services. Understanding our service terms and policies.",
+        keywords:
+          "terms and conditions, service terms, language teaching policies",
+      },
+      notFound: {
+        title: "Page Not Found - Laia Martinez",
+        description:
+          "The page you're looking for cannot be found. Return to our language learning services homepage.",
+        keywords: "404, page not found, language teaching",
+      },
+    },
+    es: {
+      home: {
+        title: "Laia Martinez - Profesora de Inglés y Español",
+        description:
+          "Aprende inglés y español con clases online personalizadas. Profesora experta en idiomas que ofrece horarios flexibles y metodología probada.",
+        keywords:
+          "clases de inglés, clases de español, aprendizaje de idiomas, enseñanza online, tutora de idiomas",
+      },
+      privacyPolicy: {
+        title: "Política de Privacidad - Laia Martinez",
+        description:
+          "Política de privacidad para los servicios de enseñanza de idiomas de Laia Martinez. Conozca cómo manejamos y protegemos su información personal.",
+        keywords:
+          "política de privacidad, protección de datos, enseñanza de idiomas, datos personales",
+      },
+      terms: {
+        title: "Términos y Condiciones - Laia Martinez",
+        description:
+          "Términos y condiciones para los servicios de enseñanza de idiomas de Laia Martinez. Comprenda nuestros términos de servicio y políticas.",
+        keywords:
+          "términos y condiciones, términos de servicio, políticas de enseñanza de idiomas",
+      },
+      notFound: {
+        title: "Página No Encontrada - Laia Martinez",
+        description:
+          "La página que busca no se puede encontrar. Vuelva a nuestra página principal de servicios de enseñanza de idiomas.",
+        keywords: "404, página no encontrada, enseñanza de idiomas",
+      },
+    },
+  };
 
+  const getMetadata = (): Metadata => {
     switch (location.pathname) {
       case "/":
         return baseMetadata[language].home;
@@ -102,7 +115,7 @@ const DynamicHead = () => {
       <meta name="twitter:card" content="summary_large_image" />
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
     </Helmet>
   );
 };

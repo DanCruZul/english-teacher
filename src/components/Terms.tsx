@@ -1,9 +1,14 @@
 import { motion } from "framer-motion";
 import { FileText } from "lucide-react";
-import { useLanguage } from "../contexts/LanguageContext";
+import { useLanguage } from "../hooks/useLanguage";
 
 export const Terms = () => {
   const { t } = useLanguage();
+
+  const getItems = (key: string): string[] => {
+    const items = t(key);
+    return Array.isArray(items) ? items : [];
+  };
 
   return (
     <div className="min-h-screen bg-white pt-24">
@@ -47,11 +52,9 @@ export const Terms = () => {
               {t("terms.sections.service.desc")}
             </p>
             <ul className="list-disc space-y-2 pl-6 text-gray-600">
-              {(t("terms.sections.service.items") as string[]).map(
-                (item, index) => (
-                  <li key={index}>{item}</li>
-                ),
-              )}
+              {getItems("terms.sections.service.items").map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
             </ul>
           </section>
 
@@ -64,7 +67,7 @@ export const Terms = () => {
               {t("terms.sections.conditions.desc")}
             </p>
             <ul className="list-disc space-y-2 pl-6 text-gray-600">
-              {(t("terms.sections.conditions.items") as string[]).map(
+              {getItems("terms.sections.conditions.items").map(
                 (item, index) => (
                   <li key={index}>{item}</li>
                 ),
@@ -81,11 +84,9 @@ export const Terms = () => {
               {t("terms.sections.payments.desc")}
             </p>
             <ul className="list-disc space-y-2 pl-6 text-gray-600">
-              {(t("terms.sections.payments.items") as string[]).map(
-                (item, index) => (
-                  <li key={index}>{item}</li>
-                ),
-              )}
+              {getItems("terms.sections.payments.items").map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
             </ul>
           </section>
 
@@ -98,7 +99,7 @@ export const Terms = () => {
               {t("terms.sections.intellectual.desc")}
             </p>
             <ul className="list-disc space-y-2 pl-6 text-gray-600">
-              {(t("terms.sections.intellectual.items") as string[]).map(
+              {getItems("terms.sections.intellectual.items").map(
                 (item, index) => (
                   <li key={index}>{item}</li>
                 ),
@@ -118,11 +119,9 @@ export const Terms = () => {
               {t("terms.sections.liability.desc")}
             </p>
             <ul className="list-disc space-y-2 pl-6 text-gray-600">
-              {(t("terms.sections.liability.items") as string[]).map(
-                (item, index) => (
-                  <li key={index}>{item}</li>
-                ),
-              )}
+              {getItems("terms.sections.liability.items").map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
             </ul>
           </section>
 

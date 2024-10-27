@@ -1,9 +1,14 @@
 import { motion } from "framer-motion";
 import { Shield } from "lucide-react";
-import { useLanguage } from "../contexts/LanguageContext";
+import { useLanguage } from "../hooks/useLanguage";
 
 const PrivacyPolicy = () => {
   const { t } = useLanguage();
+
+  const getItems = (key: string): string[] => {
+    const items = t(key);
+    return Array.isArray(items) ? items : [];
+  };
 
   return (
     <div className="min-h-screen bg-white pt-24">
@@ -37,11 +42,9 @@ const PrivacyPolicy = () => {
               {t("privacy.sections.info.desc")}
             </p>
             <ul className="list-disc space-y-2 pl-6 text-gray-600">
-              {(t("privacy.sections.info.items") as string[]).map(
-                (item, index) => (
-                  <li key={index}>{item}</li>
-                ),
-              )}
+              {getItems("privacy.sections.info.items").map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
             </ul>
           </section>
 
@@ -54,11 +57,9 @@ const PrivacyPolicy = () => {
               {t("privacy.sections.use.desc")}
             </p>
             <ul className="list-disc space-y-2 pl-6 text-gray-600">
-              {(t("privacy.sections.use.items") as string[]).map(
-                (item, index) => (
-                  <li key={index}>{item}</li>
-                ),
-              )}
+              {getItems("privacy.sections.use.items").map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
             </ul>
           </section>
 
@@ -71,7 +72,7 @@ const PrivacyPolicy = () => {
               {t("privacy.sections.protection.desc")}
             </p>
             <ul className="list-disc space-y-2 pl-6 text-gray-600">
-              {(t("privacy.sections.protection.items") as string[]).map(
+              {getItems("privacy.sections.protection.items").map(
                 (item, index) => (
                   <li key={index}>{item}</li>
                 ),
@@ -88,11 +89,9 @@ const PrivacyPolicy = () => {
               {t("privacy.sections.rights.desc")}
             </p>
             <ul className="list-disc space-y-2 pl-6 text-gray-600">
-              {(t("privacy.sections.rights.items") as string[]).map(
-                (item, index) => (
-                  <li key={index}>{item}</li>
-                ),
-              )}
+              {getItems("privacy.sections.rights.items").map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
             </ul>
           </section>
 
@@ -105,11 +104,9 @@ const PrivacyPolicy = () => {
               {t("privacy.sections.cookies.desc")}
             </p>
             <ul className="list-disc space-y-2 pl-6 text-gray-600">
-              {(t("privacy.sections.cookies.items") as string[]).map(
-                (item, index) => (
-                  <li key={index}>{item}</li>
-                ),
-              )}
+              {getItems("privacy.sections.cookies.items").map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
             </ul>
           </section>
 

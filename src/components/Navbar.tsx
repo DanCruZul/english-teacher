@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, GraduationCap } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { scrollToSection } from "../utils/navigation";
-import { useLanguage } from "../contexts/LanguageContext";
+import { useLanguage } from "../hooks/useLanguage";
 import LanguageToggle from "./LanguageToggle";
 
 const Navbar = () => {
@@ -42,7 +42,7 @@ const Navbar = () => {
             transition={{ duration: 0.3 }}
           >
             <GraduationCap className="text-primary-600" size={24} />
-            <span className="text-lg font-medium">Laia Martinez</span>
+            <span className="text-lg font-bold">Laia Martinez</span>
           </motion.a>
 
           {/* Desktop menu */}

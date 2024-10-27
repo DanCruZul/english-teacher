@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Award, Earth, Users } from "lucide-react";
-import { useLanguage } from "../contexts/LanguageContext";
+import { useLanguage } from "../hooks/useLanguage";
 
 const About = () => {
   const { t } = useLanguage();

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { GraduationCap } from "lucide-react";
 import { Link } from "react-router-dom";
 import { scrollToSection } from "../utils/navigation";
-import { useLanguage } from "../contexts/LanguageContext";
+import { useLanguage } from "../hooks/useLanguage";
 
 const Footer = () => {
   const { t } = useLanguage();

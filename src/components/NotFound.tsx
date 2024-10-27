@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Home } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useLanguage } from "../contexts/LanguageContext";
+import { useLanguage } from "../hooks/useLanguage";
 
 const NotFound = () => {
   const { t } = useLanguage();
