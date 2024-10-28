@@ -1,3 +1,4 @@
+// src/components/Services.tsx
 import { motion } from "framer-motion";
 import { useLanguage } from "../hooks/useLanguage";
 import { scrollToSection } from "../utils/navigation";
@@ -73,7 +74,6 @@ const ClassCard = ({
 const Services = () => {
   const { t } = useLanguage();
 
-  // Asegúrate de que las importaciones de SVG estén correctamente definidas en tu proyecto
   const classes: ClassCardProps[] = [
     {
       title: "classes.main",
@@ -82,27 +82,27 @@ const Services = () => {
     {
       title: "classes.live.title",
       description: "classes.live.desc",
-      svgSrc: "/src/assets/online.svg", // Asegúrate de que la ruta sea correcta
+      svgSrc: "/assets/online.svg",
     },
     {
       title: "classes.levels.title",
       description: "classes.levels.desc",
-      svgSrc: "/src/assets/levels.svg",
+      svgSrc: "/assets/levels.svg",
     },
     {
       title: "classes.conversation.title",
       description: "classes.conversation.desc",
-      svgSrc: "/src/assets/oral.svg",
+      svgSrc: "/assets/oral.svg",
     },
     {
       title: "classes.schedule.title",
       description: "classes.schedule.desc",
-      svgSrc: "/src/assets/booking.svg",
+      svgSrc: "/assets/booking.svg",
     },
     {
       title: "classes.exam.title",
       description: "classes.exam.desc",
-      svgSrc: "/src/assets/exam.svg",
+      svgSrc: "/assets/exam.svg",
     },
   ];
 

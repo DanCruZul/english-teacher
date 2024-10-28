@@ -20,12 +20,31 @@ interface LanguageProviderProps {
   children: React.ReactNode;
 }
 
+const getBrowserLanguage = (): Language => {
+  // Obtener el idioma del navegador
+  const browserLang = navigator.language.toLowerCase().split("-")[0];
+
+  // Verificar si el idioma del navegador está soportado
+  if (browserLang === "es" || browserLang === "en") {
+    return browserLang as Language;
+  }
+
+  // Si el idioma no está soportado, devolver inglés por defecto
+  return "en";
+};
+
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({
   children,
 }) => {
   const [language, setLanguage] = useState<Language>(() => {
+    // Primero intentamos obtener el idioma guardado
     const savedLanguage = localStorage.getItem("language");
-    return (savedLanguage as Language) || "en";
+    if (savedLanguage === "en" || savedLanguage === "es") {
+      return savedLanguage as Language;
+    }
+
+    // Si no hay idioma guardado, usamos el del navegador
+    return getBrowserLanguage();
   });
 
   useEffect(() => {
