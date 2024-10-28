@@ -12,76 +12,101 @@ type TranslationsType = {
 export const translations: TranslationsType = {
   en: {
     // Navbar
-    "nav.classes": "Services",
-    "nav.about": "About Me",
-    "nav.contact": "Contact Me",
+    nav: {
+      classes: "Services",
+      about: "About Me",
+      contact: "Contact Me",
+    },
 
     // Hero
-    "hero.greeting": "hi, I'm",
-    "hero.role": "Teacher of",
-    "hero.english": "English",
-    "hero.and": "and",
-    "hero.spanish": "Spanish",
-    "hero.description":
-      "Personalized online classes that adapt to your pace and goals. Practical, conversational, and effective methodology.",
-    "hero.cta": "Start Now",
-    "hero.experience": "years of experience",
-    "hero.students": "students",
+    hero: {
+      greeting: "hi, I'm",
+      role: "Teacher of",
+      english: "English",
+      and: "and",
+      spanish: "Spanish",
+      description:
+        "Personalized online classes that adapt to your pace and goals. Practical, conversational, and effective methodology.",
+      cta: "Start Now",
+      experience: "years of experience",
+      students: "students",
+    },
 
     // Classes
-    "classes.my": "My",
-    "classes.services": "Services",
-    "classes.main": "English and Spanish Classes",
-    "classes.live": "Live Sessions",
-    "classes.live.desc":
-      "1-hour session via video call (Skype, Zoom, Classgap)",
-    "classes.levels": "All Levels",
-    "classes.levels.desc": "We adapt the content to your needs",
-    "classes.conversation": "Conversation Practice",
-    "classes.conversation.desc":
-      "Develop fluency and confidence with practical exercises",
-    "classes.schedule": "Flexible Schedule",
-    "classes.schedule.desc": "Schedule your classes at your convenience",
-    "classes.exam": "Exam Preparation",
-    "classes.exam.desc":
-      "Proven strategies and exclusive materials to pass your exam",
-    "classes.start": "Start Now",
+    classes: {
+      my: "My",
+      services: "Services",
+      main: "English and Spanish Classes",
+      live: {
+        title: "Live Sessions",
+        desc: "1-hour session via video call (Skype, Zoom, Classgap)",
+      },
+      levels: {
+        title: "All Levels",
+        desc: "We adapt the content to your needs",
+      },
+      conversation: {
+        title: "Conversation Practice",
+        desc: "Develop fluency and confidence with practical exercises",
+      },
+      schedule: {
+        title: "Flexible Schedule",
+        desc: "Schedule your classes at your convenience",
+      },
+      exam: {
+        title: "Exam Preparation",
+        desc: "Proven strategies and exclusive materials to pass your exam",
+      },
+      start: "Start Now",
+    },
 
     // About
-    "about.title": "About",
-    "about.me": "Me",
-    "about.description.1":
-      "Hello! I'm Laia, a 23-year-old Spanish teacher with 4 years of experience teaching English and 2 years teaching Spanish. My passion for languages led me to train in academies and with private tutors, culminating in a stay in England to perfect my English. I'm thrilled to see my students' progress and how they gain confidence in communicating in a new language.",
-    "about.description.2":
-      "As a teacher, I combine my training with my own language learning experience. This allows me to identify the specific challenges of each language and adapt my classes to overcome them effectively. My friendly and conversational approach helps create a comfortable environment where learning flows naturally.",
-    "about.international.title": "International Experience",
-    "about.international.desc": "Teaching training and experience in England.",
-    "about.dynamic.title": "Dynamic Classes",
-    "about.dynamic.desc":
-      "Interactive sessions that maintain your interest and motivation.",
-    "about.results.title": "Guaranteed Results",
-    "about.results.desc":
-      "5-star rating based on 7 verified reviews. Verified profile with proven data.",
+    about: {
+      title: "About",
+      me: "Me",
+      description: {
+        1: "Hello! I'm Laia, a 23-year-old Spanish teacher with 4 years of experience teaching English and 2 years teaching Spanish. My passion for languages led me to train in academies and with private tutors, culminating in a stay in England to perfect my English. I'm thrilled to see my students' progress and how they gain confidence in communicating in a new language.",
+        2: "As a teacher, I combine my training with my own language learning experience. This allows me to identify the specific challenges of each language and adapt my classes to overcome them effectively. My friendly and conversational approach helps create a comfortable environment where learning flows naturally.",
+      },
+      international: {
+        title: "International Experience",
+        desc: "Teaching training and experience in England.",
+      },
+      dynamic: {
+        title: "Dynamic Classes",
+        desc: "Interactive sessions that maintain your interest and motivation.",
+      },
+      results: {
+        title: "Guaranteed Results",
+        desc: "5-star rating based on 7 verified reviews. Verified profile with proven data.",
+      },
+    },
 
     // Testimonials
-    "testimonials.my": "My",
-    "testimonials.testimonials": "Testimonials",
+    testimonials: {
+      my: "My",
+      testimonials: "Testimonials",
+    },
 
     // CTA
-    "cta.title": "Let's Start Your",
-    "cta.highlight": "Learning",
-    "cta.description":
-      "I want to help you achieve your goals in English and Spanish through dynamic, friendly, and interactive learning experiences.",
-    "cta.button": "Contact Me",
+    cta: {
+      title: "Let's Start Your",
+      highlight: "Learning",
+      description:
+        "I want to help you achieve your goals in English and Spanish through dynamic, friendly, and interactive learning experiences.",
+      button: "Contact Me",
+    },
 
     // Footer
-    "footer.links": "Links",
-    "footer.legal": "Legal",
-    "footer.privacy": "Privacy Policy",
-    "footer.terms": "Terms and Conditions",
-    "footer.rights": "All rights reserved.",
+    footer: {
+      links: "Links",
+      legal: "Legal",
+      privacy: "Privacy Policy",
+      terms: "Terms and Conditions",
+      rights: "All rights reserved.",
+    },
 
-    // Secciones especiales con estructura anidada
+    // Special sections with nested structure
     "404": {
       title: "Page Not Found",
       description:
@@ -227,77 +252,101 @@ export const translations: TranslationsType = {
   },
   es: {
     // Navbar
-    "nav.classes": "Servicios",
-    "nav.about": "Sobre Mí",
-    "nav.contact": "Contáctame",
+    nav: {
+      classes: "Servicios",
+      about: "Sobre Mí",
+      contact: "Contáctame",
+    },
 
     // Hero
-    "hero.greeting": "hola, soy",
-    "hero.role": "Profesora de",
-    "hero.english": "Inglés",
-    "hero.and": "y",
-    "hero.spanish": "Español",
-    "hero.description":
-      "Clases online personalizadas que se adaptan a tu ritmo y objetivos. Metodología práctica, conversacional y efectiva.",
-    "hero.cta": "Empieza Ahora",
-    "hero.experience": "años de experiencia",
-    "hero.students": "estudiantes",
+    hero: {
+      greeting: "hola, soy",
+      role: "Profesora de",
+      english: "Inglés",
+      and: "y",
+      spanish: "Español",
+      description:
+        "Clases online personalizadas que se adaptan a tu ritmo y objetivos. Metodología práctica, conversacional y efectiva.",
+      cta: "Empieza Ahora",
+      experience: "años de experiencia",
+      students: "estudiantes",
+    },
 
     // Classes
-    "classes.my": "Mis",
-    "classes.services": "Servicios",
-    "classes.main": "Clases de Inglés y Español",
-    "classes.live": "Sesiones en vivo",
-    "classes.live.desc":
-      "Sesión de 1 hora por videollamada (Skype, Zoom, Classgap)",
-    "classes.levels": "Todos los niveles",
-    "classes.levels.desc": "Adaptamos el contenido a tus necesidades",
-    "classes.conversation": "Práctica conversacional",
-    "classes.conversation.desc":
-      "Desarrolla fluidez y confianza con ejercicios prácticos",
-    "classes.schedule": "Horarios flexibles",
-    "classes.schedule.desc": "Programa tus clases cuando mejor te convenga",
-    "classes.exam": "Preparación para exámenes",
-    "classes.exam.desc":
-      "Estrategias probadas y materiales exclusivos para aprobar tu examen",
-    "classes.start": "Empieza ahora",
+    classes: {
+      my: "Mis",
+      services: "Servicios",
+      main: "Clases de Inglés y Español",
+      live: {
+        title: "Sesiones en vivo",
+        desc: "Sesión de 1 hora por videollamada (Skype, Zoom, Classgap)",
+      },
+      levels: {
+        title: "Todos los niveles",
+        desc: "Adaptamos el contenido a tus necesidades",
+      },
+      conversation: {
+        title: "Práctica conversacional",
+        desc: "Desarrolla fluidez y confianza con ejercicios prácticos",
+      },
+      schedule: {
+        title: "Horarios flexibles",
+        desc: "Programa tus clases cuando mejor te convenga",
+      },
+      exam: {
+        title: "Preparación para exámenes",
+        desc: "Estrategias probadas y materiales exclusivos para aprobar tu examen",
+      },
+      start: "Empieza ahora",
+    },
 
     // About
-    "about.title": "Sobre",
-    "about.me": "Mí",
-    "about.description.1":
-      "¡Hola! Soy Laia, profesora española de 23 años con 4 años de experiencia enseñando inglés y 2 años enseñando español. Mi pasión por los idiomas me llevó a formarme en academias y con profesores privados, culminando con una estancia en Inglaterra para perfeccionar mi inglés. Me emociona ver el progreso de mis estudiantes y cómo ganan confianza al comunicarse en un nuevo idioma.",
-    "about.description.2":
-      "Como profesora, combino mi formación con mi propia experiencia aprendiendo idiomas. Esto me permite identificar los desafíos específicos de cada lengua y adaptar mis clases para superarlos eficazmente. Mi enfoque amigable y conversacional ayuda a crear un ambiente cómodo donde el aprendizaje fluye naturalmente.",
-    "about.international.title": "Experiencia Internacional",
-    "about.international.desc":
-      "Formación y experiencia docente en Inglaterra.",
-    "about.dynamic.title": "Clases Dinámicas",
-    "about.dynamic.desc":
-      "Sesiones interactivas que mantienen tu interés y motivación.",
-    "about.results.title": "Resultados Garantizados",
-    "about.results.desc":
-      "Valoración de 5 estrellas basada en 7 opiniones verificadas. Perfil verificado con datos comprobados.",
+    about: {
+      title: "Sobre",
+      me: "Mí",
+      description: {
+        1: "¡Hola! Soy Laia, profesora española de 23 años con 4 años de experiencia enseñando inglés y 2 años enseñando español. Mi pasión por los idiomas me llevó a formarme en academias y con profesores privados, culminando con una estancia en Inglaterra para perfeccionar mi inglés. Me emociona ver el progreso de mis estudiantes y cómo ganan confianza al comunicarse en un nuevo idioma.",
+        2: "Como profesora, combino mi formación con mi propia experiencia aprendiendo idiomas. Esto me permite identificar los desafíos específicos de cada lengua y adaptar mis clases para superarlos eficazmente. Mi enfoque amigable y conversacional ayuda a crear un ambiente cómodo donde el aprendizaje fluye naturalmente.",
+      },
+      international: {
+        title: "Experiencia Internacional",
+        desc: "Formación y experiencia docente en Inglaterra.",
+      },
+      dynamic: {
+        title: "Clases Dinámicas",
+        desc: "Sesiones interactivas que mantienen tu interés y motivación.",
+      },
+      results: {
+        title: "Resultados Garantizados",
+        desc: "Valoración de 5 estrellas basada en 7 opiniones verificadas. Perfil verificado con datos comprobados.",
+      },
+    },
 
     // Testimonials
-    "testimonials.my": "Mis",
-    "testimonials.testimonials": "Testimonios",
+    testimonials: {
+      my: "Mis",
+      testimonials: "Testimonios",
+    },
 
     // CTA
-    "cta.title": "Comencemos tu",
-    "cta.highlight": "Aprendizaje",
-    "cta.description":
-      "Quiero ayudarte a alcanzar tus metas en inglés y español a través de experiencias de aprendizaje dinámicas, amigables e interactivas.",
-    "cta.button": "Contáctame",
+    cta: {
+      title: "Comencemos tu",
+      highlight: "Aprendizaje",
+      description:
+        "Quiero ayudarte a alcanzar tus metas en inglés y español a través de experiencias de aprendizaje dinámicas, amigables e interactivas.",
+      button: "Contáctame",
+    },
 
     // Footer
-    "footer.links": "Enlaces",
-    "footer.legal": "Legal",
-    "footer.privacy": "Política de Privacidad",
-    "footer.terms": "Términos y Condiciones",
-    "footer.rights": "Todos los derechos reservados.",
+    footer: {
+      links: "Enlaces",
+      legal: "Legal",
+      privacy: "Política de Privacidad",
+      terms: "Términos y Condiciones",
+      rights: "Todos los derechos reservados.",
+    },
 
-    // Secciones especiales con estructura anidada
+    // Special sections with nested structure
     "404": {
       title: "Página No Encontrada",
       description: "La página que buscas no existe o ha sido movida.",

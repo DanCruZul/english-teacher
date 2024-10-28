@@ -1,17 +1,11 @@
 import { motion } from "framer-motion";
 import { useLanguage } from "../hooks/useLanguage";
-import onlineSvg from "../assets/online.svg";
-import bookingSvg from "../assets/booking.svg";
-import examSvg from "../assets/exam.svg";
-import levelsSvg from "../assets/levels.svg";
-import oralSvg from "../assets/oral.svg";
 import { scrollToSection } from "../utils/navigation";
 
 interface ClassCardProps {
   title: string;
   description?: string;
-  icon?: React.ComponentType;
-  svgIcon?: string;
+  svgSrc?: string;
   isPrimary?: boolean;
   index?: number;
 }
@@ -19,8 +13,7 @@ interface ClassCardProps {
 const ClassCard = ({
   title,
   description,
-  icon: Icon,
-  svgIcon,
+  svgSrc,
   isPrimary = false,
   index = 0,
 }: ClassCardProps) => {
@@ -61,16 +54,14 @@ const ClassCard = ({
             {t("classes.start")}
           </motion.button>
         )}
-        {(Icon || svgIcon) && (
+        {svgSrc && (
           <div className="mt-auto">
             <div className="flex size-full justify-end">
-              {svgIcon && (
-                <img
-                  src={svgIcon}
-                  alt=""
-                  className={`mt-6 w-32 self-end ${isPrimary ? "text-white" : "text-primary-600"}`}
-                />
-              )}
+              <img
+                src={svgSrc}
+                alt=""
+                className={`mt-6 w-32 self-end ${isPrimary ? "text-white" : "text-primary-600"}`}
+              />
             </div>
           </div>
         )}
@@ -79,38 +70,39 @@ const ClassCard = ({
   );
 };
 
-const Classes = () => {
+const Services = () => {
   const { t } = useLanguage();
 
+  // Asegúrate de que las importaciones de SVG estén correctamente definidas en tu proyecto
   const classes: ClassCardProps[] = [
     {
       title: "classes.main",
       isPrimary: true,
     },
     {
-      title: "classes.live",
+      title: "classes.live.title",
       description: "classes.live.desc",
-      svgIcon: onlineSvg,
+      svgSrc: "/src/assets/online.svg", // Asegúrate de que la ruta sea correcta
     },
     {
-      title: "classes.levels",
+      title: "classes.levels.title",
       description: "classes.levels.desc",
-      svgIcon: levelsSvg,
+      svgSrc: "/src/assets/levels.svg",
     },
     {
-      title: "classes.conversation",
+      title: "classes.conversation.title",
       description: "classes.conversation.desc",
-      svgIcon: oralSvg,
+      svgSrc: "/src/assets/oral.svg",
     },
     {
-      title: "classes.schedule",
+      title: "classes.schedule.title",
       description: "classes.schedule.desc",
-      svgIcon: bookingSvg,
+      svgSrc: "/src/assets/booking.svg",
     },
     {
-      title: "classes.exam",
+      title: "classes.exam.title",
       description: "classes.exam.desc",
-      svgIcon: examSvg,
+      svgSrc: "/src/assets/exam.svg",
     },
   ];
 
@@ -131,7 +123,7 @@ const Classes = () => {
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {classes.map((classItem, index) => (
-            <ClassCard key={index} {...classItem} index={index} />
+            <ClassCard key={`class-${index}`} {...classItem} index={index} />
           ))}
         </div>
       </div>
@@ -139,4 +131,4 @@ const Classes = () => {
   );
 };
 
-export default Classes;
+export default Services;

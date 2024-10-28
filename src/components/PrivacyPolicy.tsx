@@ -1,9 +1,14 @@
 import { motion } from "framer-motion";
 import { Shield } from "lucide-react";
 import { useLanguage } from "../hooks/useLanguage";
+import { useEffect } from "react";
 
 const PrivacyPolicy = () => {
   const { t } = useLanguage();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const getItems = (key: string): string[] => {
     const items = t(key);
