@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 import "@fontsource-variable/sora";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -15,23 +16,25 @@ const App = () => {
   return (
     <div className="App">
       <Navbar />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Hero />
-              <Services />
-              <About />
-              <Testimonials />
-              <Contact />
-            </>
-          }
-        />
-        <Route path="/privacypolicy" element={<PrivacyPolicy />} />
-        <Route path="/terms" element={<Terms />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <AnimatePresence mode="wait">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Hero />
+                <Services />
+                <About />
+                <Testimonials />
+                <Contact />
+              </>
+            }
+          />
+          <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </AnimatePresence>
       <Footer />
     </div>
   );
