@@ -9,6 +9,7 @@ interface Testimonial {
   id: number;
   name: string;
   role: string;
+  nationality: string;
   content: string;
   rating: number;
   image: string;
@@ -95,7 +96,7 @@ const TestimonialCard = ({ testimonial, index }: TestimonialCardProps) => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 + 0.2 }}
             >
-              {testimonial.role}
+              {testimonial.role} · {testimonial.nationality}
             </motion.p>
           </div>
         </motion.div>
@@ -155,6 +156,7 @@ const Testimonials = () => {
         id: 1,
         name: "Carlos Fernández",
         role: "English Student",
+        nationality: "Spanish",
         content:
           "Laia taught English to my daughter for several months, and we were very happy with her work and dedication. I highly recommend her.",
         rating: 5,
@@ -163,8 +165,9 @@ const Testimonials = () => {
       },
       {
         id: 2,
-        name: "Diana",
+        name: "Diana Smith",
         role: "Spanish Student",
+        nationality: "American",
         content:
           "Excellent, not only as a teacher of various subjects but also as a companion for our children. She is empathetic, punctual, flexible with schedule changes, and caring.",
         rating: 5,
@@ -174,8 +177,9 @@ const Testimonials = () => {
       },
       {
         id: 3,
-        name: "Patri",
+        name: "Patricia Johnson",
         role: "Spanish Student",
+        nationality: "British",
         content:
           "Laia is a committed teacher who teaches with enthusiasm. My daughter has learned a lot after several classes with her.",
         rating: 5,
@@ -187,6 +191,7 @@ const Testimonials = () => {
         id: 4,
         name: "John Smith",
         role: "Business English Student",
+        nationality: "German",
         content:
           "The personalized approach and flexible schedule helped me improve my business English significantly. Highly professional and effective teaching methods.",
         rating: 5,
@@ -197,6 +202,7 @@ const Testimonials = () => {
         id: 5,
         name: "Maria González",
         role: "Spanish Student",
+        nationality: "Italian",
         content:
           "Learning Spanish with Laia has been a wonderful experience. Her patience and teaching style make complex grammar concepts easy to understand.",
         rating: 5,
@@ -210,6 +216,7 @@ const Testimonials = () => {
         id: 1,
         name: "Carlos Fernández",
         role: "Estudiante de Inglés",
+        nationality: "Español",
         content:
           "Laia estuvo dando clases de inglés a mi hija durante varios meses y quedamos muy contentos con su trabajo e implicación. La recomiendo.",
         rating: 5,
@@ -218,8 +225,9 @@ const Testimonials = () => {
       },
       {
         id: 2,
-        name: "Diana",
+        name: "Diana Smith",
         role: "Estudiante de Español",
+        nationality: "Estadounidense",
         content:
           "Excelente, no sólo como profe de diversas materias, si no como compañía para nuestros niños, es una chica empática, puntual, flexible a cambios en horarios, cariñosa.",
         rating: 5,
@@ -229,8 +237,9 @@ const Testimonials = () => {
       },
       {
         id: 3,
-        name: "Patri",
+        name: "Patricia Johnson",
         role: "Estudiante de Español",
+        nationality: "Británica",
         content:
           "Laia es una profesora comprometida que enseña con entusiasmo. Mi hija ha aprendido mucho tras varias clases con ella.",
         rating: 5,
@@ -242,6 +251,7 @@ const Testimonials = () => {
         id: 4,
         name: "John Smith",
         role: "Estudiante de Inglés de Negocios",
+        nationality: "Alemán",
         content:
           "El enfoque personalizado y el horario flexible me ayudaron a mejorar significativamente mi inglés de negocios. Métodos de enseñanza muy profesionales y efectivos.",
         rating: 5,
@@ -252,6 +262,7 @@ const Testimonials = () => {
         id: 5,
         name: "María González",
         role: "Estudiante de Español",
+        nationality: "Italiana",
         content:
           "Aprender español con Laia ha sido una experiencia maravillosa. Su paciencia y estilo de enseñanza hacen que los conceptos gramaticales complejos sean fáciles de entender.",
         rating: 5,

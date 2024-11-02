@@ -68,10 +68,10 @@ const Navbar = () => {
 
   const getNavbarBackground = () => {
     if (scrolled) {
-      return "bg-[#e8f9cc] lg:bg-background-100/20 lg:shadow-md lg:backdrop-blur-md";
+      return "bg-[#e8f9cc]/90 lg:bg-background-100/20 lg:shadow-md backdrop-blur-md";
     }
     if (isOpen) {
-      return "bg-[#e8f9cc] lg:bg-background-100/50 lg:shadow-md lg:backdrop-blur-md";
+      return "bg-[#e8f9cc] lg:bg-background-100/50 lg:shadow-md backdrop-blur-md";
     }
     return "bg-transparent";
   };
@@ -83,7 +83,7 @@ const Navbar = () => {
   return (
     <motion.nav
       className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${getNavbarBackground()} ${
-        scrolled ? "py-4" : "py-6"
+        scrolled ? "py-4" : "py-4"
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -104,8 +104,8 @@ const Navbar = () => {
               <GraduationCap
                 className={`h-8 w-8 ${scrolled ? "text-secondary-500" : "text-secondary-500"}`}
               />
-              <span className="text-xl font-semibold text-text-900">
-                Laia Martinez
+              <span className="text-base font-semibold text-text-900 lg:text-xl">
+                Laia Osorio
               </span>
             </a>
           </motion.div>
@@ -149,7 +149,7 @@ const Navbar = () => {
           <div className="flex md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className={`inline-flex items-center justify-center rounded-md p-2 ${getTextColor()} text-text-900 hover:bg-secondary-400/10 hover:text-orange-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white`}
+              className={`inline-flex items-center justify-center rounded-md p-2 ${getTextColor()} text-text-900 hover:bg-secondary-400/10 hover:text-orange-400`}
             >
               <span className="sr-only">Open main menu</span>
               {isOpen ? (
@@ -165,13 +165,15 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="absolute left-0 right-0 top-full text-center md:hidden"
+            className="absolute left-0 right-0 top-full rounded-full text-center md:hidden"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <div className={`space-y-1 bg-[#e8f9cc] px-2 py-4 sm:px-3`}>
+            <div
+              className={`space-y-2 bg-[#e8f9cc]/90 px-2 py-4 backdrop-blur-md`}
+            >
               <LanguageToggle />
               {location.pathname === "/" &&
                 [...navItems, contactButton].map((item) => (
@@ -181,7 +183,7 @@ const Navbar = () => {
                     className={
                       "isButton" in item && item.isButton
                         ? "block w-full rounded-full bg-gradient-to-r from-secondary-400 to-orange-400 px-3 py-2 text-base font-semibold text-text-900"
-                        : `mx-auto block w-full rounded-full px-3 py-2 text-sm font-medium text-text-900 hover:bg-primary-500/10 hover:text-primary-500`
+                        : `mx-auto block w-full rounded-full px-3 py-2 text-sm font-semibold text-text-900 hover:bg-secondary-500/10 hover:text-secondary-500`
                     }
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}

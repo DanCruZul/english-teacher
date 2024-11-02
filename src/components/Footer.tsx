@@ -29,7 +29,7 @@ const Footer = () => {
               className="flex items-center space-x-2"
             >
               <GraduationCap className="h-6 w-6 text-secondary-400" size={24} />
-              <span className="text-text-50">Laia Martinez</span>
+              <span className="text-text-50">Laia Osorio</span>
             </motion.div>
           </div>
 
@@ -101,7 +101,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="border-t border-text-800 py-6">
           <p className="text-center text-sm text-text-400">
-            © {new Date().getFullYear()} Laia Martinez. {t("footer.rights")}
+            © {new Date().getFullYear()} Laia Osorio. {t("footer.rights")}
           </p>
         </div>
       </div>

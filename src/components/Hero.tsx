@@ -10,8 +10,8 @@ const Hero = () => {
   const { t } = useLanguage();
 
   return (
-    <section ref={ref} className="relative min-h-screen overflow-hidden">
-      <div className="container relative z-10 mx-auto max-w-7xl px-6 pt-32 max-lg:max-w-[48rem] lg:px-8 lg:py-40">
+    <section ref={ref} className="relative grid min-h-screen overflow-hidden">
+      <div className="container relative z-10 mx-auto max-w-7xl px-6 pt-24 max-lg:max-w-[48rem] lg:px-8 lg:py-40">
         <motion.div
           className="grid items-center gap-12 lg:grid-cols-2 lg:gap-8"
           initial={{ opacity: 0, y: 50 }}
@@ -82,7 +82,7 @@ const Hero = () => {
         </motion.div>
       </div>
       <motion.div
-        className="absolute bottom-8 left-1/2 translate-x-1/2"
+        className="absolute flex w-full justify-center self-end pb-5"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.4, duration: 0.6 }}

@@ -15,8 +15,8 @@ const Contact = () => {
   return (
     <section id="cta" className="py-12 lg:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid items-center gap-8 md:grid-cols-2 lg:gap-12">
-          <div className="space-y-6">
+        <div className="grid items-center gap-6 md:grid-cols-2 lg:gap-12">
+          <div className="space-y-4 lg:space-y-6">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -40,7 +40,7 @@ const Contact = () => {
                 rel="noopener noreferrer"
               >
                 <Mail size={20} className="size-4 lg:size-6" />
-                <span className="lg:text-xl">{email}</span>
+                <span className="text-base lg:text-xl">{email}</span>
               </a>
             </motion.div>
           </div>

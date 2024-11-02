@@ -11,10 +11,12 @@ import Footer from "./components/Footer";
 import NotFound from "./components/NotFound";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import Terms from "./components/Terms";
+import DynamicHead from "./components/DynamicHead";
 
 const App = () => {
   return (
     <div className="bg-lime-400/20">
+      <DynamicHead />
       <Navbar />
       <AnimatePresence mode="wait">
         <Routes>
