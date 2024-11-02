@@ -82,7 +82,7 @@ const Hero = () => {
         </motion.div>
       </div>
       <motion.div
-        className="absolute flex w-full justify-center self-end pb-5"
+        className="absolute flex w-full justify-center self-end md:pb-5"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.4, duration: 0.6 }}

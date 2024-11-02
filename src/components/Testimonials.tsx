@@ -191,7 +191,7 @@ const Testimonials = () => {
         id: 4,
         name: "John Smith",
         role: "Business English Student",
-        nationality: "German",
+        nationality: "Spanish",
         content:
           "The personalized approach and flexible schedule helped me improve my business English significantly. Highly professional and effective teaching methods.",
         rating: 5,
@@ -202,7 +202,7 @@ const Testimonials = () => {
         id: 5,
         name: "Maria González",
         role: "Spanish Student",
-        nationality: "Italian",
+        nationality: "British",
         content:
           "Learning Spanish with Laia has been a wonderful experience. Her patience and teaching style make complex grammar concepts easy to understand.",
         rating: 5,
@@ -251,7 +251,7 @@ const Testimonials = () => {
         id: 4,
         name: "John Smith",
         role: "Estudiante de Inglés de Negocios",
-        nationality: "Alemán",
+        nationality: "Español",
         content:
           "El enfoque personalizado y el horario flexible me ayudaron a mejorar significativamente mi inglés de negocios. Métodos de enseñanza muy profesionales y efectivos.",
         rating: 5,
@@ -262,7 +262,7 @@ const Testimonials = () => {
         id: 5,
         name: "María González",
         role: "Estudiante de Español",
-        nationality: "Italiana",
+        nationality: "Británica",
         content:
           "Aprender español con Laia ha sido una experiencia maravillosa. Su paciencia y estilo de enseñanza hacen que los conceptos gramaticales complejos sean fáciles de entender.",
         rating: 5,
