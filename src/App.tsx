@@ -4,7 +4,7 @@ import "@fontsource-variable/sora";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Services from "./components/Services";
-import About from "./components/About";
+import About from "./components/About Me";
 import Testimonials from "./components/Testimonials";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
@@ -14,7 +14,7 @@ import Terms from "./components/Terms";
 
 const App = () => {
   return (
-    <div className="App">
+    <div className="bg-lime-400/20">
       <Navbar />
       <AnimatePresence mode="wait">
         <Routes>

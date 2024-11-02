@@ -4,18 +4,16 @@ import { useLanguage } from "../hooks/useLanguage";
 
 const Contact = () => {
   const { t } = useLanguage();
-  const phoneNumber = "34684132605"; // Número sin espacios ni símbolos
+  const phoneNumber = "34684132605";
   const email = "laiamartinezosorio0@gmail.com";
 
   const handleContactClick = () => {
-    // Crear el enlace de WhatsApp con el número
     const whatsappUrl = `https://wa.me/${phoneNumber}`;
-    // Abrir WhatsApp en una nueva pestaña
     window.open(whatsappUrl, "_blank");
   };
 
   return (
-    <section id="cta" className="bg-white py-12 lg:py-24">
+    <section id="cta" className="py-12 lg:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid items-center gap-8 md:grid-cols-2 lg:gap-12">
           <div className="space-y-6">
@@ -23,10 +21,9 @@ const Contact = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl font-bold leading-tight md:text-5xl"
+              className="text-3xl font-bold leading-tight text-text-900 md:text-5xl"
             >
-              {t("cta.title")}{" "}
-              <span className="text-primary-600">{t("cta.highlight")}</span>
+              {t("cta.title")} <span className="">{t("cta.highlight")}</span>
             </motion.h2>
 
             <motion.div
@@ -38,7 +35,7 @@ const Contact = () => {
             >
               <a
                 href={`mailto:${email}`}
-                className="flex items-center space-x-3 text-sm transition-colors hover:text-primary-600 lg:text-xl"
+                className="flex items-center space-x-3 text-sm text-text-800 transition-colors hover:text-secondary-600 lg:text-xl"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -55,14 +52,14 @@ const Contact = () => {
             transition={{ delay: 0.2 }}
             className="space-y-6"
           >
-            <p className="text-base leading-relaxed text-gray-600">
+            <p className="text-base leading-relaxed text-text-800">
               {t("cta.description")}
             </p>
             <motion.button
               onClick={handleContactClick}
-              className="btn-primary"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
+              className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-gradient-to-br from-secondary-400 to-orange-500 px-5 py-3 text-base font-semibold text-text-900 hover:opacity-95"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               {t("cta.button")}
             </motion.button>

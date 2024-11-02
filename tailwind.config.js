@@ -1,69 +1,100 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-  darkMode: "class",
+  darkMode: ["class"],
   theme: {
     extend: {
       colors: {
+        // Text colors
+        text: {
+          950: "#0c0c0d",
+          900: "#18181b",
+          800: "#313135",
+          700: "#494950",
+          600: "#62626a",
+          500: "#7a7a85",
+          400: "#95959d",
+          300: "#afafb6",
+          200: "#cacace",
+          100: "#e4e4e7",
+          50: "#f2f2f3",
+        },
+        background: {
+          950: "#0f1208",
+          900: "#1e240f",
+          800: "#3b471f",
+          700: "#596b2e",
+          600: "#768f3d",
+          500: "#94b34d",
+          400: "#a9c270",
+          300: "#bfd194",
+          200: "#d4e0b8",
+          100: "#eaf0db",
+          50: "#f4f7ed",
+        },
         primary: {
-          50: "#f5f7ff",
-          100: "#ebf0ff",
-          200: "#d6e0ff",
-          300: "#adc1ff",
-          400: "#8093ff",
-          500: "#4c5dff",
-          600: "#3a3fff",
-          700: "#2828ff",
-          800: "#1e1b9c",
-          900: "#141270",
-          950: "#0a0a47",
+          950: "#011519",
+          900: "#022a31",
+          800: "#035563",
+          700: "#057f94",
+          600: "#06a9c6",
+          500: "#08d3f7",
+          400: "#39dcf9",
+          300: "#6be5fa",
+          200: "#9ceefc",
+          100: "#cef6fd",
+          50: "#e6fbfe",
         },
-        surface: {
-          light: "#ffffff",
-          dark: "#09090b",
-        },
-        content: {
-          light: "#09090b",
-          dark: "#ffffff",
+        secondary: {
+          950: "#191301",
+          900: "#312502",
+          800: "#624b04",
+          700: "#947005",
+          600: "#c59507",
+          500: "#f6bb09",
+          400: "#f8c83a",
+          300: "#fad66b",
+          200: "#fbe49d",
+          100: "#fdf1ce",
+          50: "#fef8e6",
         },
         accent: {
-          light: "#2828ff",
-          dark: "#adc1ff",
+          950: "#17020d",
+          900: "#2e051a",
+          800: "#5c0a33",
+          700: "#8a0f4d",
+          600: "#b91366",
+          500: "#e71880",
+          400: "#ec4699",
+          300: "#f075b3",
+          200: "#f5a3cc",
+          100: "#fad1e6",
+          50: "#fde8f2",
+        },
+
+        // System colors
+        surface: {
+          light: "#f4f7ee", // Using background-50
+          dark: "#0e1108", // Using background-950
+        },
+        content: {
+          light: "#18181b", // Using text-900
+          dark: "#f2f2f3", // Using text-50
         },
         muted: {
-          light: "#71717a",
-          dark: "#a1a1aa",
-        },
-        border: {
-          light: "#e4e4e7",
-          dark: "#27272a",
+          light: "#7a7a85", // Using text-500
+          dark: "#95959d", // Using text-400
         },
         hover: {
-          light: "#f4f4f5",
-          dark: "#18181b",
+          light: "#e9efdc", // Using background-100
+          dark: "#1d2310", // Using background-900
         },
       },
       fontFamily: {
         sans: ["Sora Variable", "sans-serif"],
       },
-      transitionTimingFunction: {
-        smooth: "cubic-bezier(0.4, 0, 0.2, 1)",
-      },
-      animation: {
-        "fade-in": "fadeIn 0.5s ease-out forwards",
-        "slide-up": "slideUp 0.5s ease-out forwards",
-      },
-      keyframes: {
-        fadeIn: {
-          "0%": { opacity: "0", transform: "translateY(10px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
-        },
-        slideUp: {
-          "0%": { transform: "translateY(20px)", opacity: "0" },
-          "100%": { transform: "translateY(0)", opacity: "1" },
-        },
-      },
+      // Rest of the configuration remains the same
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 };

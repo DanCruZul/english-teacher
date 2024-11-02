@@ -20,7 +20,7 @@ export const translations: TranslationsType = {
 
     // Hero
     hero: {
-      greeting: "hi, I'm",
+      greeting: "Hi, I'm",
       role: "Teacher of",
       english: "English",
       and: "and",
@@ -84,8 +84,9 @@ export const translations: TranslationsType = {
 
     // Testimonials
     testimonials: {
-      my: "My",
-      testimonials: "Testimonials",
+      what: "What My",
+      students: "Students",
+      saying: "Are Saying",
     },
 
     // CTA
@@ -260,7 +261,7 @@ export const translations: TranslationsType = {
 
     // Hero
     hero: {
-      greeting: "hola, soy",
+      greeting: "Hola, soy",
       role: "Profesora de",
       english: "Inglés",
       and: "y",
@@ -324,8 +325,9 @@ export const translations: TranslationsType = {
 
     // Testimonials
     testimonials: {
-      my: "Mis",
-      testimonials: "Testimonios",
+      what: "Lo Que Dicen",
+      students: "Mis Alumnos",
+      saying: "",
     },
 
     // CTA

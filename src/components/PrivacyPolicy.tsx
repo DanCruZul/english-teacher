@@ -16,7 +16,7 @@ const PrivacyPolicy = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white pt-24">
+    <div className="min-h-screen pt-24">
       <div className="mx-auto max-w-4xl px-6 pb-24 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -24,7 +24,7 @@ const PrivacyPolicy = () => {
           className="mb-12 text-center"
         >
           <div className="mb-6 flex justify-center">
-            <Shield className="h-12 w-12 text-primary-600" />
+            <Shield className="h-12 w-12 text-secondary-500" />
           </div>
           <h1 className="mb-4 text-4xl font-bold">{t("privacy.title")}</h1>
           <p className="text-gray-600">
