@@ -177,7 +177,7 @@ const Testimonials = () => {
       },
       {
         id: 3,
-        name: "Patricia Johnson",
+        name: "Patricia",
         role: "Spanish Student",
         nationality: "British",
         content:
@@ -189,7 +189,7 @@ const Testimonials = () => {
       },
       {
         id: 4,
-        name: "John Smith",
+        name: "John",
         role: "Business English Student",
         nationality: "Spanish",
         content:
@@ -200,7 +200,7 @@ const Testimonials = () => {
       },
       {
         id: 5,
-        name: "Maria González",
+        name: "María",
         role: "Spanish Student",
         nationality: "British",
         content:
@@ -237,7 +237,7 @@ const Testimonials = () => {
       },
       {
         id: 3,
-        name: "Patricia Johnson",
+        name: "Patricia",
         role: "Estudiante de Español",
         nationality: "Británica",
         content:
@@ -249,7 +249,7 @@ const Testimonials = () => {
       },
       {
         id: 4,
-        name: "John Smith",
+        name: "John",
         role: "Estudiante de Inglés de Negocios",
         nationality: "Español",
         content:
@@ -260,7 +260,7 @@ const Testimonials = () => {
       },
       {
         id: 5,
-        name: "María González",
+        name: "María",
         role: "Estudiante de Español",
         nationality: "Británica",
         content:
