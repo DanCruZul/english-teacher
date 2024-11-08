@@ -9,7 +9,6 @@ interface Testimonial {
   id: number;
   name: string;
   role: string;
-  nationality: string;
   content: string;
   rating: number;
   image: string;
@@ -96,7 +95,7 @@ const TestimonialCard = ({ testimonial, index }: TestimonialCardProps) => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 + 0.2 }}
             >
-              {testimonial.role} · {testimonial.nationality}
+              {testimonial.role}
             </motion.p>
           </div>
         </motion.div>
@@ -156,7 +155,6 @@ const Testimonials = () => {
         id: 1,
         name: "Carlos Fernández",
         role: "English Student",
-        nationality: "Spanish",
         content:
           "Laia taught English to my daughter for several months, and we were very happy with her work and dedication. I highly recommend her.",
         rating: 5,
@@ -165,21 +163,19 @@ const Testimonials = () => {
       },
       {
         id: 2,
-        name: "Diana Smith",
+        name: "Diana",
         role: "Spanish Student",
-        nationality: "American",
         content:
-          "Excellent, not only as a teacher of various subjects but also as a companion for our children. She is empathetic, punctual, flexible with schedule changes, and caring.",
+          "Excellent, not only as a teacher of various subjects, but also as a companion for our children, she is an empathetic, punctual person, flexible with schedule changes, caring. Highly recommended.",
         rating: 5,
         image:
-          "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200",
+          "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=200",
         isPrimary: true,
       },
       {
         id: 3,
         name: "Patricia",
         role: "Spanish Student",
-        nationality: "British",
         content:
           "Laia is a committed teacher who teaches with enthusiasm. My daughter has learned a lot after several classes with her.",
         rating: 5,
@@ -189,26 +185,35 @@ const Testimonials = () => {
       },
       {
         id: 4,
-        name: "John",
-        role: "Business English Student",
-        nationality: "Spanish",
-        content:
-          "The personalized approach and flexible schedule helped me improve my business English significantly. Highly professional and effective teaching methods.",
-        rating: 5,
-        image:
-          "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200",
-      },
-      {
-        id: 5,
-        name: "María",
+        name: "Paulina Saldaña",
         role: "Spanish Student",
-        nationality: "British",
         content:
-          "Learning Spanish with Laia has been a wonderful experience. Her patience and teaching style make complex grammar concepts easy to understand.",
+          "Very good teacher, with a lot of patience, my daughter passed Language thanks to Laia",
         rating: 5,
         image:
           "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200",
+      },
+      {
+        id: 5,
+        name: "Aroa",
+        role: "English Student",
+        content:
+          "She explained things very well to me, I understood them and when correcting homework together everything became clearer",
+        rating: 5,
+        image:
+          "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200",
         isPrimary: true,
+      },
+      {
+        id: 6,
+        name: "Daniel",
+        role: "Spanish Student",
+        content:
+          "She is a top-notch professional, she expresses herself and explains very well, she helped me with math and language subjects and thanks to her I was able to pass them. She is an excellent person and answers your questions if you have any",
+        rating: 5,
+        image:
+          "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200",
+        isSecondary: true,
       },
     ],
     es: [
@@ -216,7 +221,6 @@ const Testimonials = () => {
         id: 1,
         name: "Carlos Fernández",
         role: "Estudiante de Inglés",
-        nationality: "Español",
         content:
           "Laia estuvo dando clases de inglés a mi hija durante varios meses y quedamos muy contentos con su trabajo e implicación. La recomiendo.",
         rating: 5,
@@ -225,21 +229,19 @@ const Testimonials = () => {
       },
       {
         id: 2,
-        name: "Diana Smith",
+        name: "Diana",
         role: "Estudiante de Español",
-        nationality: "Estadounidense",
         content:
-          "Excelente, no sólo como profe de diversas materias, si no como compañía para nuestros niños, es una chica empática, puntual, flexible a cambios en horarios, cariñosa.",
+          "Excelente, no sólo como profe de diversas materias, si no como compañía para nuestros niños, es una chica empática, puntual, flexible a cambios en horarios, cariñosa. Muy recomendable.",
         rating: 5,
         image:
-          "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200",
+          "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=200",
         isPrimary: true,
       },
       {
         id: 3,
         name: "Patricia",
         role: "Estudiante de Español",
-        nationality: "Británica",
         content:
           "Laia es una profesora comprometida que enseña con entusiasmo. Mi hija ha aprendido mucho tras varias clases con ella.",
         rating: 5,
@@ -249,26 +251,35 @@ const Testimonials = () => {
       },
       {
         id: 4,
-        name: "John",
-        role: "Estudiante de Inglés de Negocios",
-        nationality: "Español",
-        content:
-          "El enfoque personalizado y el horario flexible me ayudaron a mejorar significativamente mi inglés de negocios. Métodos de enseñanza muy profesionales y efectivos.",
-        rating: 5,
-        image:
-          "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200",
-      },
-      {
-        id: 5,
-        name: "María",
+        name: "Paulina Saldaña",
         role: "Estudiante de Español",
-        nationality: "Británica",
         content:
-          "Aprender español con Laia ha sido una experiencia maravillosa. Su paciencia y estilo de enseñanza hacen que los conceptos gramaticales complejos sean fáciles de entender.",
+          "Muy buena profesora, con mucha paciencia, mi hija aprobó Lengua gracias a Laia",
         rating: 5,
         image:
           "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200",
+      },
+      {
+        id: 5,
+        name: "Aroa",
+        role: "Estudiante de Inglés",
+        content:
+          "Me explicaba muy bien las cosas, las entendía y al corregir deberes juntas todo quedaba más claro",
+        rating: 5,
+        image:
+          "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200",
         isPrimary: true,
+      },
+      {
+        id: 6,
+        name: "Daniel",
+        role: "Estudiante de Español",
+        content:
+          "Es una profesional de primera, se expresa y explica muy bien, me ayudó con las asignaturas de matemáticas y lengua y gracias a ella pude aprobarlas. Es una excelente persona y te resuelve las dudas si tienes alguna",
+        rating: 5,
+        image:
+          "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200",
+        isSecondary: true,
       },
     ],
   };

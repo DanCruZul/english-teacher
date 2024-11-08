@@ -70,7 +70,7 @@ export const translations: TranslationsType = {
       },
       international: {
         title: "International Experience",
-        desc: "Teaching training and experience in England.",
+        desc: "I have had the privilege of teaching students from Spain, England, Switzerland, Colombia, China, and Brazil.",
       },
       dynamic: {
         title: "Dynamic Classes",
@@ -311,7 +311,7 @@ export const translations: TranslationsType = {
       },
       international: {
         title: "Experiencia Internacional",
-        desc: "Formación y experiencia docente en Inglaterra.",
+        desc: "He tenido el privilegio de enseñar a estudiantes de España, Inglaterra, Suiza, Colombia, China y Brasil.",
       },
       dynamic: {
         title: "Clases Dinámicas",
