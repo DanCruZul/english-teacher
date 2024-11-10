@@ -14,6 +14,7 @@ interface Testimonial {
   image: string;
   isPrimary?: boolean;
   isSecondary?: boolean;
+  isVideo?: boolean;
 }
 
 interface TestimonialCardProps {
@@ -33,6 +34,24 @@ type KeenSliderInstance = {
 };
 
 const TestimonialCard = ({ testimonial, index }: TestimonialCardProps) => {
+  if (testimonial.isVideo) {
+    return (
+      <motion.div
+        style={{ scale: 1, opacity: 1 }}
+        transition={{ type: "spring", stiffness: 200 }}
+        className="group h-[280px] rounded-3xl border border-secondary-300 bg-secondary-50/50 p-8 shadow-md shadow-background-950/5 transition-all duration-500"
+      >
+        <video
+          src="/src/assets/video.mp4"
+          className="h-full w-full rounded-lg object-contain"
+          controls
+          playsInline
+          preload="metadata"
+        />
+      </motion.div>
+    );
+  }
+
   const getCardStyle = () => {
     if (testimonial.isPrimary) {
       return "border border-accent-300 bg-accent-50/50 text-accent-900";
@@ -57,58 +76,60 @@ const TestimonialCard = ({ testimonial, index }: TestimonialCardProps) => {
     <motion.div
       style={{ scale: 1, opacity: 1 }}
       transition={{ type: "spring", stiffness: 200 }}
-      className={`group h-full rounded-3xl p-8 shadow-md shadow-background-950/5 transition-all duration-500 ${getCardStyle()}`}
+      className={`group h-[280px] rounded-3xl p-8 shadow-md shadow-background-950/5 transition-all duration-500 ${getCardStyle()}`}
     >
-      <div className="flex h-full flex-col space-y-6">
-        <motion.div
-          className="flex items-center space-x-4"
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: index * 0.1 }}
-        >
+      <div className="flex h-full flex-col justify-between">
+        <div className="space-y-4">
           <motion.div
-            className="h-12 w-12 overflow-hidden rounded-full"
-            whileHover={{ scale: 1.1 }}
-            transition={{ type: "spring", stiffness: 300 }}
+            className="flex items-center space-x-4"
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.1 }}
           >
-            <img
-              src={testimonial.image}
-              alt={testimonial.name}
-              className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
-            />
+            <motion.div
+              className="h-12 w-12 overflow-hidden rounded-full"
+              whileHover={{ scale: 1.1 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <img
+                src={testimonial.image}
+                alt={testimonial.name}
+                className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+            </motion.div>
+            <div>
+              <motion.h3
+                className="font-bold"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 + 0.1 }}
+              >
+                {testimonial.name}
+              </motion.h3>
+              <motion.p
+                className="text-muted-light dark:text-muted-dark"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 + 0.2 }}
+              >
+                {testimonial.role}
+              </motion.p>
+            </div>
           </motion.div>
-          <div>
-            <motion.h3
-              className="font-bold"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 + 0.1 }}
-            >
-              {testimonial.name}
-            </motion.h3>
-            <motion.p
-              className="text-muted-light dark:text-muted-dark"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 + 0.2 }}
-            >
-              {testimonial.role}
-            </motion.p>
-          </div>
-        </motion.div>
 
-        <motion.p
-          className="flex-grow text-base"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: index * 0.1 + 0.3 }}
-        >
-          "{testimonial.content}"
-        </motion.p>
+          <motion.p
+            className="text-base"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.1 + 0.3 }}
+          >
+            "{testimonial.content}"
+          </motion.p>
+        </div>
 
         <motion.div
           className="flex space-x-1"
@@ -152,6 +173,15 @@ const Testimonials = () => {
   const testimonials: { [key: string]: Testimonial[] } = {
     en: [
       {
+        id: 0,
+        name: "",
+        role: "",
+        content: "",
+        rating: 0,
+        image: "",
+        isVideo: true,
+      },
+      {
         id: 1,
         name: "Carlos Fernández",
         role: "English Student",
@@ -166,7 +196,7 @@ const Testimonials = () => {
         name: "Diana",
         role: "Spanish Student",
         content:
-          "Excellent, not only as a teacher of various subjects, but also as a companion for our children, she is an empathetic, punctual person, flexible with schedule changes, caring. Highly recommended.",
+          "Excellent teacher, not only for various subjects but also as a companion for our children. She is empathetic, punctual, flexible with schedules, and caring. Highly recommended.",
         rating: 5,
         image:
           "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=200",
@@ -198,7 +228,7 @@ const Testimonials = () => {
         name: "Aroa",
         role: "English Student",
         content:
-          "She explained things very well to me, I understood them and when correcting homework together everything became clearer",
+          "She explained things very well to me, I understood them and when correcting homework together everything became clearer to me",
         rating: 5,
         image:
           "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200",
@@ -209,7 +239,7 @@ const Testimonials = () => {
         name: "Daniel",
         role: "Spanish Student",
         content:
-          "She is a top-notch professional, she expresses herself and explains very well, she helped me with math and language subjects and thanks to her I was able to pass them. She is an excellent person and answers your questions if you have any",
+          "She is a great professional who explains everything very well. She helped me with math and language, and thanks to her, I passed both subjects. She's excellent and answers all your questions.",
         rating: 5,
         image:
           "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200",
@@ -217,6 +247,15 @@ const Testimonials = () => {
       },
     ],
     es: [
+      {
+        id: 0,
+        name: "",
+        role: "",
+        content: "",
+        rating: 0,
+        image: "",
+        isVideo: true,
+      },
       {
         id: 1,
         name: "Carlos Fernández",
@@ -232,7 +271,7 @@ const Testimonials = () => {
         name: "Diana",
         role: "Estudiante de Español",
         content:
-          "Excelente, no sólo como profe de diversas materias, si no como compañía para nuestros niños, es una chica empática, puntual, flexible a cambios en horarios, cariñosa. Muy recomendable.",
+          "Excelente profesora, no solo en diversas materias, sino también como compañía para nuestros niños. Es empática, puntual, flexible con los horarios y cariñosa. Muy recomendable.",
         rating: 5,
         image:
           "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=200",
@@ -264,7 +303,7 @@ const Testimonials = () => {
         name: "Aroa",
         role: "Estudiante de Inglés",
         content:
-          "Me explicaba muy bien las cosas, las entendía y al corregir deberes juntas todo quedaba más claro",
+          "Me explicaba muy bien las cosas, las entendía y al corregir los deberes juntas todo me quedaba más claro",
         rating: 5,
         image:
           "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200",
@@ -275,7 +314,7 @@ const Testimonials = () => {
         name: "Daniel",
         role: "Estudiante de Español",
         content:
-          "Es una profesional de primera, se expresa y explica muy bien, me ayudó con las asignaturas de matemáticas y lengua y gracias a ella pude aprobarlas. Es una excelente persona y te resuelve las dudas si tienes alguna",
+          "Es una gran profesional que explica todo muy bien. Me ayudó con matemáticas y lengua, y gracias a ella aprobé ambas asignaturas. Es excelente y resuelve todas tus dudas.",
         rating: 5,
         image:
           "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200",
