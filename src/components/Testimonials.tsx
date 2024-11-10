@@ -42,7 +42,7 @@ const TestimonialCard = ({ testimonial, index }: TestimonialCardProps) => {
         className="group h-[280px] rounded-3xl border border-secondary-300 bg-secondary-50/50 p-8 shadow-md shadow-background-950/5 transition-all duration-500"
       >
         <video
-          src="/src/assets/video.mp4"
+          src="/public/assets/video.mp4"
           className="h-full w-full rounded-lg object-contain"
           controls
           playsInline
