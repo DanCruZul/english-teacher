@@ -21,55 +21,56 @@ interface LanguageProviderProps {
 }
 
 const getBrowserLanguage = (): Language => {
-  // Obtener el idioma del navegador
-  const browserLang = navigator.language.toLowerCase().split("-")[0];
-
-  // Verificar si el idioma del navegador está soportado
-  if (browserLang === "es" || browserLang === "en") {
-    return browserLang as Language;
+  try {
+    const browserLang = navigator.language.toLowerCase();
+    const preferredLang = browserLang.startsWith("es") ? "es" : "en";
+    return preferredLang;
+  } catch (error) {
+    console.warn("Error detecting browser language:", error);
+    return "en";
   }
-
-  // Si el idioma no está soportado, devolver inglés por defecto
-  return "en";
 };
 
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({
   children,
 }) => {
   const [language, setLanguage] = useState<Language>(() => {
-    // Primero intentamos obtener el idioma guardado
     const savedLanguage = localStorage.getItem("language");
     if (savedLanguage === "en" || savedLanguage === "es") {
-      return savedLanguage as Language;
+      return savedLanguage;
     }
-
-    // Si no hay idioma guardado, usamos el del navegador
     return getBrowserLanguage();
   });
 
   useEffect(() => {
+    document.documentElement.lang = language;
     localStorage.setItem("language", language);
   }, [language]);
 
   const t = (key: string): string | string[] => {
-    const keys = key.split(".");
-    let value: TranslationValue = translations[language];
+    try {
+      const keys = key.split(".");
+      let value: TranslationValue = translations[language];
 
-    for (const k of keys) {
-      if (
-        value &&
-        typeof value === "object" &&
-        !Array.isArray(value) &&
-        k in value
-      ) {
-        value = value[k];
-      } else {
-        console.warn(`Translation not found for key: ${key}`);
-        return key;
+      for (const k of keys) {
+        if (
+          value &&
+          typeof value === "object" &&
+          !Array.isArray(value) &&
+          k in value
+        ) {
+          value = value[k];
+        } else {
+          console.warn(`Translation not found for key: ${key}`);
+          return key;
+        }
       }
-    }
 
-    return value as string | string[];
+      return value as string | string[];
+    } catch (error) {
+      console.error("Translation error:", error);
+      return key;
+    }
   };
 
   return (

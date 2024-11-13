@@ -25,13 +25,13 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <h1 className="text-4xl tracking-tight text-text-900 md:text-6xl">
+              <h1 className="text-3xl tracking-tight text-text-900 md:text-5xl lg:text-6xl">
                 {t("hero.greeting")}{" "}
                 <span className="bg-gradient-to-r from-primary-400 to-primary-500 bg-clip-text font-semibold text-transparent">
                   Laia
                 </span>
               </h1>
-              <h2 className="text-4xl font-semibold tracking-tight text-text-900 md:text-6xl">
+              <h2 className="text-3xl font-semibold tracking-tight text-text-900 md:text-5xl lg:text-6xl">
                 {t("hero.role")}
                 <div className="mt-2 space-x-3">
                   <span className="bg-gradient-to-r from-accent-400 to-accent-500 bg-clip-text font-semibold text-transparent">
@@ -45,7 +45,7 @@ const Hero = () => {
               </h2>
             </motion.div>
             <motion.p
-              className="max-w-lg text-lg text-text-800 lg:text-xl"
+              className="max-w-lg text-base text-text-800 lg:text-xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
@@ -75,7 +75,7 @@ const Hero = () => {
                 alt="Laia"
                 width={600}
                 height={600}
-                className="size-full rounded-xl object-cover"
+                className="size-full max-w-[600px] rounded-xl object-cover"
               />
             </picture>
           </motion.div>
