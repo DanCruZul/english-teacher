@@ -42,8 +42,8 @@ export const translations: TranslationsType = {
         desc: "1-hour session via video call (Skype, Zoom, Classgap)",
       },
       levels: {
-        title: "All Levels",
-        desc: "We adapt the content to your needs",
+        title: "Select your level",
+        desc: "English: A1, A2, B1, B2 - Spanish: All Levels",
       },
       conversation: {
         title: "Conversation Practice",
@@ -87,6 +87,21 @@ export const translations: TranslationsType = {
       what: "What My",
       students: "Students",
       saying: "Are Saying",
+    },
+
+    // Pricing
+    pricing: {
+      title: "Simple, Transparent Pricing",
+      description: "Quality language education at an affordable price",
+      perClass: "Per Class",
+      perHour: "per hour",
+      startNow: "Start Learning Now",
+      features: {
+        individual: "One-on-one personalized classes",
+        flexible: "Flexible scheduling",
+        materials: "Learning materials included",
+        support: "WhatsApp support between classes",
+      },
     },
 
     // CTA
@@ -283,8 +298,8 @@ export const translations: TranslationsType = {
         desc: "Sesión de 1 hora por videollamada (Skype, Zoom, Classgap)",
       },
       levels: {
-        title: "Todos los niveles",
-        desc: "Adaptamos el contenido a tus necesidades",
+        title: "Selecciona tu nivel",
+        desc: "Ingles: A1, A2, B1, B2 - Español: Todos los niveles",
       },
       conversation: {
         title: "Práctica conversacional",
@@ -328,6 +343,21 @@ export const translations: TranslationsType = {
       what: "Lo Que Dicen",
       students: "Mis Alumnos",
       saying: "",
+    },
+
+    // Pricing
+    pricing: {
+      title: "Precio Simple y Transparente",
+      description: "Educación de idiomas de calidad a un precio asequible",
+      perClass: "Por Clase",
+      perHour: "por hora",
+      startNow: "Empieza a Aprender Ahora",
+      features: {
+        individual: "Clases personalizadas uno a uno",
+        flexible: "Horarios flexibles",
+        materials: "Materiales de aprendizaje incluidos",
+        support: "Soporte por WhatsApp entre clases",
+      },
     },
 
     // CTA
@@ -404,9 +434,9 @@ export const translations: TranslationsType = {
           desc: "Utilizamos cookies y tecnologías similares para:",
           items: [
             "Mantener su sesión activa",
-            "Recordar sus preferencias",
-            "Analizar el uso de nuestro sitio web",
-            "Mejorar la experiencia del usuario",
+            "Remember your preferences",
+            "Analyze website usage",
+            "Improve user experience",
           ],
         },
         contact: {
