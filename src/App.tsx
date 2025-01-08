@@ -7,7 +7,6 @@ import Services from "./components/Services";
 import About from "./components/About Me";
 import Testimonials from "./components/Testimonials";
 import Contact from "./components/Contact";
-import Pricing from "./components/Pricing";
 import Footer from "./components/Footer";
 import NotFound from "./components/NotFound";
 import PrivacyPolicy from "./components/PrivacyPolicy";
@@ -29,7 +28,6 @@ const App = () => {
                 <Services />
                 <About />
                 <Testimonials />
-                <Pricing />
                 <Contact />
               </>
             }

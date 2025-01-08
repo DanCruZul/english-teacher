@@ -74,9 +74,8 @@ const ClassCard = ({
             className={`text-base md:text-lg ${
               isPrimary ? "text-white/90" : ""
             }`}
-          >
-            {t(description)}
-          </motion.p>
+            dangerouslySetInnerHTML={{ __html: t(description) }}
+          ></motion.p>
         )}
 
         {index === 0 && (

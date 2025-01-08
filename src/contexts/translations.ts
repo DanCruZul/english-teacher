@@ -43,7 +43,7 @@ export const translations: TranslationsType = {
       },
       levels: {
         title: "Select your level",
-        desc: "English: A1, A2, B1, B2 - Spanish: All Levels",
+        desc: "English: A1, A2, B1, B2<br>Spanish: All Levels",
       },
       conversation: {
         title: "Conversation Practice",
@@ -299,7 +299,7 @@ export const translations: TranslationsType = {
       },
       levels: {
         title: "Selecciona tu nivel",
-        desc: "Ingles: A1, A2, B1, B2 - Español: Todos los niveles",
+        desc: "Ingles: A1, A2, B1, B2<br>Español: Todos los niveles",
       },
       conversation: {
         title: "Práctica conversacional",
